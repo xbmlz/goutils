@@ -47,3 +47,17 @@ func MkdirIfNotExist(path string) error {
 	}
 	return os.MkdirAll(path, 0755)
 }
+
+func DirExists(path string) bool {
+	if Exists(path) {
+		return IsDir(path)
+	}
+	return false
+}
+
+func FileExists(path string) bool {
+	if Exists(path) {
+		return IsFile(path)
+	}
+	return false
+}
